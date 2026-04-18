@@ -8,7 +8,7 @@ def multi_raw_materials_requirements(df: pd.DataFrame, df_boms: pd.DataFrame):
     single_info = []
     for _, row in df.iterrows():
         item_code = row["Item"]
-        meter = row["Meters"]
+        meter = row["Quantity"]
         df_raw_material = df_boms[df_boms["Item"] == item_code]
         df_raw_material["Requirement"] = round(df_raw_material["Quantity"] * meter, 3)
         single_req.append(df_raw_material)
