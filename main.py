@@ -56,7 +56,15 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 if "df_boms" not in st.session_state:
-    uploaded_file = st.file_uploader("Choose a file", type=["csv"])
+    with open("example-file.csv", "rb") as file:
+        st.download_button(
+            label="Download example file",
+            data=file,
+            file_name="example-file.csv",
+            mime="text/csv",
+            width="stretch"
+        )
+    uploaded_file = st.file_uploader("Choose a file", type=["csv"], width="stretch")
     if uploaded_file is not None:
         st.session_state["df_boms"] = pd.read_csv(uploaded_file, sep=';', encoding="ISO-8859-1", skiprows=[1])
         st.rerun()
@@ -111,7 +119,7 @@ else:
         with st.expander("Single Analysis", expanded=False):
             count = 0
             for df in st.session_state["single_req"]:
-                st.header(f":orange[{st.session_state["single_info"][count]["item_code"]}]")
+                st.header(f":orange[{st.session_state['single_info'][count]['item_code']}]")
                 st.subheader(st.session_state["single_info"][count]["item_description"])
                 df_styled = df.style.format(precision=3, thousands="", decimal=",")
                 st.dataframe(df_styled, height=(len(df) + 1) * 35 + 3, hide_index=True)
