@@ -1,0 +1,13 @@
+Item;Item Description;Raw Material;Raw Material Description;UM;Quantity
+----;----------------;------------;------------------------;--;--------
+P-100;Sedia in Legno Modello A;RM-001;Gamba in faggio 45cm;PZ;4.00
+P-100;Sedia in Legno Modello A;RM-002;Seduta in legno pre-formata;PZ;1.00
+P-100;Sedia in Legno Modello A;RM-003;Schienale ergonomico;PZ;1.00
+P-100;Sedia in Legno Modello A;RM-010;Viti acciaio 4x40mm;PZ;12.00
+P-200;Tavolo da Pranzo 160x90;RM-005;Piano tavolo rovere;PZ;1.00
+P-200;Tavolo da Pranzo 160x90;RM-006;Gamba tavolo massiccio;PZ;4.00
+P-200;Tavolo da Pranzo 160x90;RM-011;Staffa angolare metallo;PZ;8.00
+P-200;Tavolo da Pranzo 160x90;RM-020;Vernice protettiva trasparente;LT;0.50
+P-300;Armadietto Ufficio;RM-030;Pannello laterale 120x40;PZ;2.00
+P-300;Armadietto Ufficio;RM-031;Anta battente;PZ;2.00
+P-300;Armadietto Ufficio;RM-040;Cerniera a scatto;PZ;4.00
