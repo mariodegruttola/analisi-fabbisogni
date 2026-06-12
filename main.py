@@ -17,7 +17,7 @@ def multi_raw_materials_requirements(df: pd.DataFrame, df_boms: pd.DataFrame):
 
     df_all_raw_material = pd.concat(single_req, axis=0)
     df_all_raw_material.drop(["Quantity"], axis=1, inplace=True)
-    df_all_raw_material_grouped = df_all_raw_material.groupby(["Raw Material", "Raw Material Description", "UM"]).sum()
+    df_all_raw_material_grouped = df_all_raw_material.groupby(["Raw Material", "Raw Material Description", "UM"])["Requirement"].sum()
 
     return single_info, single_req, df_all_raw_material_grouped
 
