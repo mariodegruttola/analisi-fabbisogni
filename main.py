@@ -17,7 +17,7 @@ def multi_raw_materials_requirements(df: pd.DataFrame, df_boms: pd.DataFrame):
 
     df_all_raw_material = pd.concat(single_req, axis=0)
     df_all_raw_material.drop(["Quantity"], axis=1, inplace=True)
-    df_all_raw_material_grouped = df_all_raw_material.groupby(["Raw Material", "Raw Material Description", "UM"])["Requirement"].sum()
+    df_all_raw_material_grouped = df_all_raw_material.groupby(["Raw Material", "Raw Material Description", "UM"])["Requirement"].sum().reset_index()
 
     return single_info, single_req, df_all_raw_material_grouped
 
@@ -114,7 +114,7 @@ else:
 
         df_tmp: pd.DataFrame = st.session_state["df_all_raw_material_grouped"]
         df_styled = df_tmp.style.format(precision=3, thousands="", decimal=",")
-        col2.dataframe(df_styled, use_container_width=True)
+        col2.dataframe(df_styled, use_container_width=True, hide_index=True)
 
         with st.expander("Single Analysis", expanded=False):
             count = 0
